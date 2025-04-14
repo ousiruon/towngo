@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-display: "Poppins", sans-serif;
+  --font-logo: "Gloria Hallelujah", cursive;
+  --color-bg-dark: #242629;
+  --color-bg-dark-sec: #16161a;
+  --color-main-dark: #fffffe;
+  --color-hightlight-dark: #7f5af0;
+  --color-tertiary-dark: #2cb67d;
+  --color-bg-light: #f8f5f2;
+  --color-sec-bg-light: #fffffe;
+  --color-main-light: #232323;
+  --color-hightlight-light: #078080;
+  --color-tertiary-light: #f45d48;
+}
