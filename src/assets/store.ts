@@ -323,7 +323,7 @@ export const storeData = create<any>((set, get) => ({
   team: [
     {
       name: "Ethan Miller",
-      image: "public/ethan.jpg",
+      image: "ethan.jpg",
       position: "Co-Founder & CEO",
       presentation:
         "Ethan's vision drives TowN'go. A passionate outdoor enthusiast, he believes in making adventure accessible to everyone. He oversees the strategic direction and growth of the company.",
@@ -331,7 +331,7 @@ export const storeData = create<any>((set, get) => ({
     },
     {
       name: "Caleb Davis",
-      image: "public/caleb.jpg",
+      image: "caleb.jpg",
       position: "Head of Operations",
       presentation:
         "Caleb ensures the smooth running of TowN'go's day-to-day operations. With a keen eye for detail, he manages our trailer fleet and logistics to provide a seamless rental experience.",
@@ -339,7 +339,7 @@ export const storeData = create<any>((set, get) => ({
     },
     {
       name: "Owen Wilson",
-      image: "public/owen.jpg",
+      image: "owen.jpg",
       position: "Marketing Manager",
       presentation:
         "Owen crafts the TowN'go story and connects with our community. He's passionate about sharing the joy of camping and ensuring everyone knows about the freedom our trailers offer.",
@@ -347,7 +347,7 @@ export const storeData = create<any>((set, get) => ({
     },
     {
       name: "Samuel Taylor",
-      image: "public/samuel.jpg",
+      image: "samuel.jpg",
       position: "Lead Developer",
       presentation:
         "Samuel leads the technical development of the TowN'go platform. He's dedicated to creating a user-friendly and efficient experience for finding and booking your perfect camping trailer.",
