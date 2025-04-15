@@ -6,6 +6,7 @@ const Hero = () => {
   const [activeInput, setActiveInput] = useState<null | string>(null);
   const [activeBtn, setActiveBtn] = useState<boolean>(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const today = new Date().toISOString().split("T")[0];
   const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     e.currentTarget.reset();
@@ -85,6 +86,7 @@ const Hero = () => {
                     onFocus={() => setActiveInput("pickupDate")}
                     onBlur={() => setActiveInput(null)}
                     type="date"
+                    min={today}
                     name="pickDate"
                     className="w-full border md:border-r-0 dark:border-main-dark py-5 bg-dark focus:outline-0 px-4 text-main-light dark:text-main-dark text-xs"
                   />
@@ -147,6 +149,7 @@ const Hero = () => {
                     onFocus={() => setActiveInput("dropoffDate")}
                     onBlur={() => setActiveInput(null)}
                     type="date"
+                    min={today}
                     name="DropOffDate"
                     className="w-full border md:border-r-0 dark:border-main-dark py-5 bg-dark focus:outline-0 px-4 text-main-light dark:text-main-dark text-xs"
                   />
