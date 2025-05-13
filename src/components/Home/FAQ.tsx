@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { LuDot } from "react-icons/lu";
+import { NavLink } from "react-router";
 //FAQ interface
 interface FAQ {
   question: string;
@@ -58,9 +59,7 @@ const FAQ = () => {
     <div className="relative bg-bg-light dark:bg-bg-dark text-main-light dark:text-main-dark py-20">
       <div className="flex flex-col md:flex-row justify-center items-start font-display w-full max-w-[90%] xl:max-w-[1200px] mx-auto">
         <div className="w-full md:w-2/6 md:sticky md:top-20 md:left-0 flex gap-5 flex-col items-center md:items-start pb-8 md:pb-0 font-semibold">
-          <div className="text-2xl md:text-3xl lg:text-4xl ">
-            FAQs
-          </div>
+          <div className="text-2xl md:text-3xl lg:text-4xl ">FAQs</div>
           <div className="text-xl md:text-2xl lg:text-3xl">
             Your Camping Questions Answered.
           </div>
@@ -85,7 +84,10 @@ const FAQ = () => {
               }
               className="absolute top-0 left-0 bg-tertiary-light dark:bg-tertiary-dark w-full h-full"
             ></motion.div>
-            <div className="flex items-center gap-1 z-2 font-semibold">
+            <NavLink
+              to="contact"
+              className="flex items-center gap-1 z-2 font-semibold"
+            >
               <div>Contact Us</div>
               <motion.div
                 initial={{ x: 0 }}
@@ -104,7 +106,7 @@ const FAQ = () => {
                 <LuDot />
               </motion.div>
               <div className="border-1 rounded-full w-4 h-4"></div>
-            </div>
+            </NavLink>
           </motion.button>
         </div>
         <div className="w-full md:w-4/6 px-8 py-4 flex gap-8 flex-col">
