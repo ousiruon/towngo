@@ -3,29 +3,39 @@ import { storeData } from "../../assets/store";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import NewsAbout from "../About/NewsAbout";
-
+// Single Article component for Blog section
 const Article = () => {
+  //Getting post ID from link
   const { postId } = useParams();
+  //Getting "getArticle" function from store
   const { getArticle } = storeData();
-  const [correctId, setCorrectId] = useState(false);
+  //Set an useState that will be used to verify whether a post ID is correct or not
+  const [correctId, setCorrectId] = useState<boolean>(false);
+  //Button hover useState
   const [buttonHover, setButtonHover] = useState<number | null>(null);
+  //Verify if post ID is correct
   useEffect(() => {
     getArticle(Number(postId)) ? setCorrectId(true) : setCorrectId(false);
   }, []);
+  //If post id is correct set a new title for current document based on the article title
   useEffect(() => {
-    correctId && (document.title = getArticle(Number(postId)).title);
+    correctId &&
+      (document.title = getArticle(Number(postId))?.title || "TowN'Go");
   }, [correctId]);
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
-  }, []);
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  //Form functionalities
+  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
   const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     e.currentTarget.reset();
     setFormSubmitted(true);
   };
+  //Ensures to get back to the top of the page
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  }, [postId]);
   return (
     <div className="relative w-full bg-sec-bg-light dark:bg-bg-dark-sec flex flex-col gap-20 items-center justify-center font-display text-main-light dark:text-main-dark px-5 md:px-10 lg:px-20 py-20 md:py-25 lg:py-30">
       {correctId && (
@@ -34,29 +44,29 @@ const Article = () => {
             <div className="flex flex-col md:flex-row w-full">
               <div className="flex flex-col w-full md:w-1/2 lg:w-1/3 font-semibold gap-5 pb-5 md:pb-0 md:gap-10 md:pr-20">
                 <div className="flex flex-row gap-2 text-xs">
-                  <div>{getArticle(Number(postId)).date}</div>
+                  <div>{getArticle(Number(postId))?.date}</div>
                   <div className="opacity-60">
-                    {getArticle(Number(postId)).reading_duration} Read
+                    {getArticle(Number(postId))?.reading_duration} Read
                   </div>
                 </div>
                 <div className="text-4xl">
-                  {getArticle(Number(postId)).title}
+                  {getArticle(Number(postId))?.title}
                 </div>
                 <div className="font-normal text-sm opacity-70">
-                  {getArticle(Number(postId)).subtitle}
+                  {getArticle(Number(postId))?.subtitle}
                 </div>
               </div>
               <div className="flex relative w-full md:w-1/2 lg:w-2/3 pt-[70%] md:pt-[45%] rounded-lg">
                 <img
                   className="absolute top-0 left-0 w-full h-full rounded-lg object-cover"
-                  src={getArticle(Number(postId)).image}
-                  alt={getArticle(Number(postId)).title}
+                  src={getArticle(Number(postId))?.image}
+                  alt={getArticle(Number(postId))?.title}
                 />
               </div>
             </div>
             <div className="flex flex-col md:flex-row gap-5 md:gap-0 w-full">
               <div className="flex flex-col w-full md:w-4/6 gap-8 md:gap-16">
-                {getArticle(Number(postId)).paragraphs.map(
+                {getArticle(Number(postId))?.paragraphs.map(
                   (e: any, i: number) => (
                     <div className="flex flex-col w-full gap-4" key={i}>
                       {e.title && (

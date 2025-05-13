@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useEffect } from "react";
 import { storeData } from "../../assets/store";
-
+//Toggler component
 const Toggler = () => {
   const { darkMode, setDarkMode } = storeData();
   useEffect(() => {

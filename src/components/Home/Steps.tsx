@@ -1,8 +1,12 @@
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useRef, useState } from "react";
-
+interface Step {
+  title: string;
+  description: string;
+}
+//Steps section in Home page
 const Steps = () => {
-  const steps = [
+  const steps: Step[] = [
     {
       title: "Find Your Perfect Match",
       description:
@@ -24,7 +28,7 @@ const Steps = () => {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const [currentPosition, setCurrentPosition] = useState(0);
+  const [currentPosition, setCurrentPosition] = useState<number>(0);
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     setCurrentPosition(latest * 100);
   });

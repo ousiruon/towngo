@@ -2,9 +2,15 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { LuDot } from "react-icons/lu";
-
+//FAQ interface
+interface FAQ {
+  question: string;
+  answer:string;
+}
+//FAQ component where a FAQ array is mapped to return FAQ objects
+//Two useStates to manage animations and display
 const FAQ = () => {
-  const FAQs = [
+  const FAQs: FAQ[] = [
     {
       question: "What types of trailers do you offer for camping?",
       answer:
@@ -46,7 +52,7 @@ const FAQ = () => {
         "Delivery and setup options may be available for an additional fee, depending on your location and availability. Please inquire when making your reservation.",
     },
   ];
-  const [buttonHover, setButtonHover] = useState(false);
+  const [buttonHover, setButtonHover] = useState<boolean>(false);
   const [activeFAQ, setActiveFAQ] = useState<null | number>(null);
   return (
     <div className="relative bg-bg-light dark:bg-bg-dark text-main-light dark:text-main-dark py-20">

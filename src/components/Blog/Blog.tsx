@@ -2,9 +2,13 @@ import { motion } from "motion/react";
 import { storeData } from "../../assets/store";
 import { NavLink } from "react-router";
 import { useEffect, useState } from "react";
+//Blog component
 const Blog = () => {
+  //Get all blog posts
   const { news } = storeData();
+  //useState for some hovering animation in each blog post
   const [activeNew, setActiveNew] = useState<null | number>(null);
+  //Scroll to top on page load
   useEffect(() => {
     window.scrollTo({
       top: 0,

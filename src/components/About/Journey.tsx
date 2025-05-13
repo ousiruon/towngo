@@ -1,7 +1,7 @@
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useRef, useState } from "react";
 import { storeData } from "../../assets/store";
-
+// Journey section in "About us"
 const Journey = () => {
   const { journeyData } = storeData();
   const ref = useRef(null);

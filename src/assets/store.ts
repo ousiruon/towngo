@@ -1,5 +1,38 @@
 import { create } from "zustand";
-export const storeData = create<any>((set, get) => ({
+interface paragraphProps {
+  title?: string;
+  description: string;
+}
+export interface newsProps {
+  id: number;
+  date: string;
+  reading_duration: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  paragraphs: paragraphProps[];
+}
+export interface teamProps {
+  name: string;
+  image: string;
+  position: string;
+  presentation: string;
+  linkedin: string;
+}
+interface journeyDataProps {
+  date: string;
+  title: string;
+  description: string;
+}
+interface storeDataProps {
+  darkMode: boolean;
+  setDarkMode: (mode: boolean) => void;
+  news: newsProps[];
+  team: teamProps[];
+  journeyData: journeyDataProps[];
+  getArticle: (id: number) => newsProps | undefined;
+}
+export const storeData = create<storeDataProps>((set, get) => ({
   darkMode: true,
   setDarkMode: (mode: boolean) => set(() => ({ darkMode: !mode })),
   news: [
@@ -387,6 +420,6 @@ export const storeData = create<any>((set, get) => ({
     },
   ],
   getArticle: (id: number) => {
-    return get().news.find((article: any) => article.id === id);
+    return get().news.find((article: newsProps) => article.id === id);
   },
 }));

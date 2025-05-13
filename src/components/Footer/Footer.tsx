@@ -10,9 +10,10 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { NavLink } from "react-router";
-
+//Footer component
+//
 const Footer = () => {
-  const [buttonHover, setButtonHover] = useState(false);
+  const [buttonHover, setButtonHover] = useState<boolean>(false);
   return (
     <div className="relative w-full bg-sec-bg-light dark:bg-bg-dark-sec flex justify-start items-center font-display text-main-light dark:text-main-dark pt-20 pb-6">
       <div className="flex flex-row w-full">

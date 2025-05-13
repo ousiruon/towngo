@@ -2,7 +2,8 @@ import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { HiOutlinePhone } from "react-icons/hi";
 import { IoIosHome, IoIosMailUnread } from "react-icons/io";
-
+//Contact component
+//It mainly contains a state to manage hover animations and a form submit functionality
 const Contact = () => {
   useEffect(() => {
     window.scrollTo({

@@ -6,7 +6,7 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-
+//Welcome section in Home page displaying a trailer passing by over text while scrolling
 const Welcome = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -32,7 +32,7 @@ const Welcome = () => {
               Haul It, Anywhere
             </div>
           ) : (
-            <div className="text-2xl md:text-3xl lg:text-4xl text-main-light dark:text-main-dark font-logo w-full md:w-2/4 text-center">
+            <div className="text-2xl md:text-3xl lg:text-4xl text-main-light dark:text-main-dark font-logo md:w-2/4 text-center w-[90%]">
               Connecting you with the perfect trailer, right here.
             </div>
           )}

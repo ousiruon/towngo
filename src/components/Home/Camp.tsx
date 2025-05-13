@@ -1,5 +1,5 @@
 import { storeData } from "../../assets/store";
-
+//Camp component returning an SVG based on mode selected
 const Camp = () => {
   const { darkMode } = storeData();
   return (

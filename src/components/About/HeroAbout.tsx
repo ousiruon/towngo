@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { LuDot } from "react-icons/lu";
 import { NavLink } from "react-router";
-
+// Hero section in "About us"
 const HeroAbout = () => {
   const [buttonHover, setButtonHover] = useState<number | null>(null);
   return (

@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { BiSolidQuoteSingleRight } from "react-icons/bi";
 import { NavLink } from "react-router";
-
+//Logo component
 const Logo = () => {
   return (
     <NavLink to="/" className="flex font-logo font-bold text-base text-tertiary-light dark:text-tertiary-dark">

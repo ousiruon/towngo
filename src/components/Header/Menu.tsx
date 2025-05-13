@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-
+//Menu component
 const Menu = () => {
   return (
     <nav>

@@ -1,3 +1,4 @@
+//Trailer component returning an SVG
 const Trailer = () => {
   return (
     <>

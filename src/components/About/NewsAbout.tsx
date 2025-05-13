@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { storeData } from "../../assets/store";
+import { newsProps, storeData } from "../../assets/store";
 import { motion } from "motion/react";
 import { NavLink } from "react-router";
-
+// News section in "About us"
 const NewsAbout = () => {
   const { news } = storeData();
-  const newsAbout = news.slice(0, 3);
+  const newsAbout: newsProps[] = news.slice(0, 3);
   const [buttonHover, setButtonHover] = useState<number | null>(null);
   const [activeNew, setActiveNew] = useState<null | number>(null);
   return (

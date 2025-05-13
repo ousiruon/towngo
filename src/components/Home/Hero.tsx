@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Camp from "./Camp";
 import { motion } from "motion/react";
-
+//Hero component with some useStates to manage animations, and submit form func
 const Hero = () => {
   const [activeInput, setActiveInput] = useState<null | string>(null);
   const [activeBtn, setActiveBtn] = useState<boolean>(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const today = new Date().toISOString().split("T")[0];
+  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+  const today: string = new Date().toISOString().split("T")[0];
   const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     e.currentTarget.reset();
