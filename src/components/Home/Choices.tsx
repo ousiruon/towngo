@@ -98,7 +98,7 @@ const Choices = () => {
         <div className="relative articles w-full flex items-start justify-center h-[80dvh] text-main-dark">
           {/* Mobile Navigation */}
           {!isDesktop && (
-            <div className="absolute top-[58%] w-[90%] flex gap-4 md:hidden justify-end z-10">
+            <div className="absolute top-[65%] w-[90%] flex gap-4 md:hidden justify-end z-10">
               <div
                 onClick={goToPrevious}
                 className={`${currentIndex === 0 ? "opacity-20": "cursor-pointer"} bg-tertiary-light dark:bg-tertiary-dark p-1 rounded`}
