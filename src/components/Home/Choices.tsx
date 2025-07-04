@@ -91,14 +91,14 @@ const Choices = () => {
       className="relative w-full min-h-dvh bg-bg-light dark:bg-bg-dark flex flex-col justify-start items-center font-display text-main-light dark:text-main-dark pt-20"
     >
       <div className="sticky top-20 left-0 flex flex-col gap-20 w-full">
-        <div className="text-2xl md:text-3xl lg:text-4xl text-main-light dark:text-main-dark font-logo w-full text-center">
+        <div className="text-2xl md:text-3xl lg:text-4xl text-main-light dark:text-main-dark font-logo w-full text-center px-4">
           Adventure Awaits, Rent Today.
         </div>
 
         <div className="relative articles w-full flex items-start justify-center h-[80dvh] text-main-dark">
           {/* Mobile Navigation */}
           {!isDesktop && (
-            <div className="absolute top-[65%] w-[90%] flex gap-4 md:hidden justify-end z-10">
+            <div className="absolute top-[-7%] w-[90%] flex gap-4 md:hidden justify-end z-10">
               <div
                 onClick={goToPrevious}
                 className={`${currentIndex === 0 ? "opacity-20": "cursor-pointer"} bg-tertiary-light dark:bg-tertiary-dark p-1 rounded`}
